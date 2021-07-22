@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "autoname": "field:account_name",
+ "creation": "2021-07-20 12:54:20.922014",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account_name",
+  "account_no",
+  "parent_account",
+  "root_type",
+  "balance_type",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_accounts"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "account_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account No"
+  },
+  {
+   "fieldname": "parent_account",
+   "fieldtype": "Link",
+   "label": "Parent Account",
+   "options": "Accounts"
+  },
+  {
+   "fieldname": "root_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Root Type",
+   "options": "\nAssest\nLiability\nEquity\nExpense\nIncome"
+  },
+  {
+   "fieldname": "balance_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Balance_type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Accounts"
+  },
+  {
+   "fieldname": "parent_accounts",
+   "fieldtype": "Link",
+   "label": "Parent Accounts",
+   "options": "Accounts"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2021-07-20 18:46:29.540980",
+ "modified_by": "Administrator",
+ "module": "Accounting",
+ "name": "Accounts",
+ "nsm_parent_field": "parent_accounts",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
