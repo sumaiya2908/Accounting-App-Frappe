@@ -1,33 +1,30 @@
 {
  "actions": [],
- "autoname": "field:serial_no",
+ "autoname": "PR_INV_.####",
  "creation": "2021-07-22 13:07:03.955408",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "serial_no",
   "company",
   "supplier_name",
+  "section_break_6",
   "posting_date",
   "due_date",
+  "paid",
+  "section_break_8",
+  "amended_from",
   "item",
-  "quantity",
-  "rate",
-  "amount",
-  "amended_from"
+  "section_break_9",
+  "total_quantity",
+  "column_break_11",
+  "total_amount"
  ],
  "fields": [
   {
-   "fieldname": "serial_no",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Serial No",
-   "unique": 1
-  },
-  {
    "fieldname": "company",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Company",
    "options": "Company"
   },
@@ -39,10 +36,12 @@
    "options": "Supplier"
   },
   {
+   "default": "Today",
    "fieldname": "posting_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "read_only": 1
   },
   {
    "fieldname": "due_date",
@@ -52,29 +51,9 @@
   },
   {
    "fieldname": "item",
-   "fieldtype": "Link",
-   "in_list_view": 1,
+   "fieldtype": "Table",
    "label": "Item ",
-   "options": "Item"
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Quantity"
-  },
-  {
-   "fieldname": "rate",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Rate"
-  },
-  {
-   "fieldname": "amount",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Amount",
-   "read_only": 1
+   "options": "Invoice Item"
   },
   {
    "fieldname": "amended_from",
@@ -84,12 +63,50 @@
    "options": "Purchase Invoice",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_quantity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-07-22 13:07:03.955408",
+ "modified": "2021-07-23 12:44:19.693860",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Purchase Invoice",

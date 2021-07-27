@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "creation": "2021-07-22 14:52:35.745855",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "company",
+  "fiscal_year",
+  "account",
+  "debit",
+  "credit",
+  "balance",
+  "against_account",
+  "voucher_type",
+  "voucher_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Fiscal Year",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account"
+  },
+  {
+   "fieldname": "debit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Debit"
+  },
+  {
+   "fieldname": "credit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Credit"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Balance"
+  },
+  {
+   "fieldname": "against_account",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Against Account"
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Voucher Type"
+  },
+  {
+   "fieldname": "voucher_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Voucher No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-07-22 14:53:24.479220",
+ "modified_by": "Administrator",
+ "module": "Accounting",
+ "name": "GL Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

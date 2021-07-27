@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "autoname": "field:series_no",
+ "creation": "2021-07-22 14:37:14.650635",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "series_no",
+  "posting_date",
+  "company",
+  "account_entries",
+  "total_debit",
+  "total_credit",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "series_no",
+   "fieldtype": "Data",
+   "label": "Series No",
+   "unique": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "account_entries",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account Entries",
+   "options": "Journal Account Entries"
+  },
+  {
+   "fieldname": "total_debit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Total Debit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_credit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Total Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Journal Entry",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-07-22 14:37:14.650635",
+ "modified_by": "Administrator",
+ "module": "Accounting",
+ "name": "Journal Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
