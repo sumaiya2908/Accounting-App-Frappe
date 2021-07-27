@@ -8,8 +8,8 @@
  "field_order": [
   "item_no",
   "item_name",
-  "item_description",
-  "item_msp"
+  "item_brand",
+  "item_description"
  ],
  "fields": [
   {
@@ -34,15 +34,14 @@
    "label": "Item Description"
   },
   {
-   "fieldname": "item_msp",
+   "fieldname": "item_brand",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Item MSP"
+   "label": "Item Brand"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-20 18:44:56.653435",
+ "modified": "2021-07-26 15:46:22.756123",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Item",

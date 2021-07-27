@@ -1,64 +1,69 @@
 {
  "actions": [],
+ "autoname": "PAY-EN-.####",
  "creation": "2021-07-22 14:07:04.421969",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "series_no",
   "payment_type",
   "posting_date",
+  "column_break_6",
   "company",
+  "section_break_6",
   "party_type",
   "party_name",
+  "column_break_9",
   "account_paid_to",
   "account_paid_from",
   "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "series_no",
-   "fieldtype": "Data",
-   "label": "Series No"
-  },
-  {
    "fieldname": "payment_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Payment Type",
    "options": "\nPay\nReceive"
   },
   {
    "fieldname": "posting_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Posting Date"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Company",
    "options": "Company"
   },
   {
    "fieldname": "party_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Party Type",
    "options": "\nSupplier\nCustomer"
   },
   {
    "fieldname": "party_name",
    "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
    "label": "Party Name",
    "options": "party_type"
   },
   {
    "fieldname": "account_paid_to",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Account Paid To",
    "options": "Accounts"
   },
   {
    "fieldname": "account_paid_from",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Account Paid From",
    "options": "Accounts"
   },
@@ -70,12 +75,24 @@
    "options": "Payment Entry",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-07-22 14:07:04.421969",
+ "modified": "2021-07-23 11:07:26.406265",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Payment Entry",

@@ -8,14 +8,15 @@
  "field_order": [
   "account_name",
   "account_no",
-  "parent_account",
+  "company",
   "root_type",
   "balance_type",
   "lft",
   "rgt",
   "is_group",
   "old_parent",
-  "parent_accounts"
+  "parent_accounts",
+  "data_11"
  ],
  "fields": [
   {
@@ -23,7 +24,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Account Name",
-   "reqd": 1,
    "unique": 1
   },
   {
@@ -33,17 +33,11 @@
    "label": "Account No"
   },
   {
-   "fieldname": "parent_account",
-   "fieldtype": "Link",
-   "label": "Parent Account",
-   "options": "Accounts"
-  },
-  {
    "fieldname": "root_type",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Root Type",
-   "options": "\nAssest\nLiability\nEquity\nExpense\nIncome"
+   "options": "\nAssest\nLiability\nExpense\nIncome"
   },
   {
    "fieldname": "balance_type",
@@ -81,16 +75,27 @@
    "options": "Accounts"
   },
   {
+   "fetch_from": "accounts.account_name",
    "fieldname": "parent_accounts",
    "fieldtype": "Link",
    "label": "Parent Accounts",
    "options": "Accounts"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "data_11",
+   "fieldtype": "Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2021-07-20 18:46:29.540980",
+ "modified": "2021-07-26 23:40:26.863351",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Accounts",
