@@ -6,6 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "type_of_payment_section",
   "payment_type",
   "posting_date",
   "column_break_6",
@@ -13,9 +14,14 @@
   "section_break_6",
   "party_type",
   "party_name",
-  "column_break_9",
-  "account_paid_to",
-  "account_paid_from",
+  "section_break_9",
+  "pay_to_account",
+  "pay_to_balance",
+  "column_break_14",
+  "pay_from_account",
+  "pay_from_balance",
+  "section_break_17",
+  "amount",
   "amended_from"
  ],
  "fields": [
@@ -24,48 +30,40 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Payment Type",
-   "options": "\nPay\nReceive"
+   "options": "\nPay\nReceive",
+   "reqd": 1
   },
   {
+   "default": "Today",
    "fieldname": "posting_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "read_only": 1
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Company",
-   "options": "Company"
+   "options": "Company",
+   "reqd": 1
   },
   {
    "fieldname": "party_type",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Party Type",
-   "options": "\nSupplier\nCustomer"
+   "options": "\nSupplier\nCustomer",
+   "reqd": 1
   },
   {
    "fieldname": "party_name",
    "fieldtype": "Dynamic Link",
    "in_list_view": 1,
    "label": "Party Name",
-   "options": "party_type"
-  },
-  {
-   "fieldname": "account_paid_to",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Account Paid To",
-   "options": "Accounts"
-  },
-  {
-   "fieldname": "account_paid_from",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Account Paid From",
-   "options": "Accounts"
+   "options": "party_type",
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -82,17 +80,67 @@
   },
   {
    "fieldname": "section_break_6",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Party Details"
   },
   {
-   "fieldname": "column_break_9",
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Account Details"
+  },
+  {
+   "fieldname": "pay_from_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Pay From Account",
+   "options": "Accounts"
+  },
+  {
+   "fieldname": "pay_to_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Pay To  Account",
+   "options": "Accounts"
+  },
+  {
+   "default": "0",
+   "fetch_from": "pay_from_account.account_balance",
+   "fieldname": "pay_to_balance",
+   "fieldtype": "Data",
+   "label": "Account Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pay_from_balance",
+   "fieldtype": "Data",
+   "label": "Account Balance"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "Payment Amount"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Data",
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_payment_section",
+   "fieldtype": "Section Break",
+   "label": "Type of Payment"
+  },
+  {
+   "fieldname": "column_break_14",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-07-23 11:07:26.406265",
+ "modified": "2021-07-30 13:37:19.068875",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Payment Entry",
