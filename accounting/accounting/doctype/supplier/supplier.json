@@ -6,7 +6,10 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "supplier_name"
+  "supplier_name",
+  "supplier_address",
+  "supplier_contact",
+  "balance"
  ],
  "fields": [
   {
@@ -15,11 +18,29 @@
    "in_list_view": 1,
    "label": "Supplier Name",
    "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "balance",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_address",
+   "fieldtype": "Data",
+   "label": "Supplier Address"
+  },
+  {
+   "fieldname": "supplier_contact",
+   "fieldtype": "Data",
+   "label": "Supplier Contact"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-20 18:33:33.679472",
+ "modified": "2021-07-29 23:21:00.877234",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Supplier",

@@ -11,6 +11,7 @@
   "company",
   "root_type",
   "balance_type",
+  "account_balance",
   "lft",
   "rgt",
   "is_group",
@@ -90,12 +91,20 @@
   {
    "fieldname": "data_11",
    "fieldtype": "Data"
+  },
+  {
+   "default": "0",
+   "fieldname": "account_balance",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account Balance",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2021-07-26 23:40:26.863351",
+ "modified": "2021-07-28 21:23:47.091543",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Accounts",

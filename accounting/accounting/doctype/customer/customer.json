@@ -10,7 +10,8 @@
   "customer_name",
   "customer_address",
   "customer_contact",
-  "customer_account"
+  "customer_account",
+  "balance"
  ],
  "fields": [
   {
@@ -35,11 +36,19 @@
    "fieldname": "customer_account",
    "fieldtype": "Data",
    "label": "Customer Account"
+  },
+  {
+   "default": "0",
+   "fieldname": "balance",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Balance",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-20 18:33:00.143145",
+ "modified": "2021-07-29 23:20:21.014602",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Customer",

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "autoname": "GL-ENT-.####.",
  "creation": "2021-07-22 14:52:35.745855",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -44,12 +45,14 @@
    "label": "Account"
   },
   {
+   "default": "0",
    "fieldname": "debit",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Debit"
   },
   {
+   "default": "0",
    "fieldname": "credit",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -82,7 +85,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-22 14:53:24.479220",
+ "modified": "2021-07-30 13:56:59.809725",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "GL Entry",

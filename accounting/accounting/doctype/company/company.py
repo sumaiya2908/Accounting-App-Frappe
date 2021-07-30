@@ -7,7 +7,7 @@ from frappe.model.document import Document
 
 default_accounts = {
 
-    "Application of Funds": ["Debtors",
+    "Application of Funds": ["Debitors",
                              "Bank Account",
                              "Cash",
                              "Stock In Hand"],
@@ -66,6 +66,5 @@ class Company(Document):
         else:
             self.abbrevation = abbrevation
 
-
-    def on_update(self):
+    def after_insert(self):
         self.create_accounts()
