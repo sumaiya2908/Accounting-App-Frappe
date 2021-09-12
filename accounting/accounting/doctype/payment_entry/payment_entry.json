@@ -11,15 +11,15 @@
   "posting_date",
   "column_break_6",
   "company",
+  "abbr",
   "section_break_6",
   "party_type",
+  "column_break_8",
   "party_name",
   "section_break_9",
   "pay_to_account",
-  "pay_to_balance",
   "column_break_14",
   "pay_from_account",
-  "pay_from_balance",
   "section_break_17",
   "amount",
   "amended_from"
@@ -93,7 +93,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Pay From Account",
-   "options": "Accounts"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "pay_to_account",
@@ -101,20 +102,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "label": "Pay To  Account",
-   "options": "Accounts"
-  },
-  {
-   "default": "0",
-   "fetch_from": "pay_from_account.account_balance",
-   "fieldname": "pay_to_balance",
-   "fieldtype": "Data",
-   "label": "Account Balance",
-   "read_only": 1
-  },
-  {
-   "fieldname": "pay_from_balance",
-   "fieldtype": "Data",
-   "label": "Account Balance"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_17",
@@ -135,12 +124,24 @@
   {
    "fieldname": "column_break_14",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "company.abbrevation",
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "abbr",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-07-30 13:37:19.068875",
+ "modified": "2021-09-12 13:23:53.907360",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Payment Entry",

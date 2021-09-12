@@ -1,5 +1,5 @@
 {
- "_assign": "[\"summayya@erpnext.com\"]",
+ "_assign": "[]",
  "actions": [],
  "autoname": "field:customer_name",
  "creation": "2021-07-20 11:55:27.827632",
@@ -10,8 +10,7 @@
   "customer_name",
   "customer_address",
   "customer_contact",
-  "customer_account",
-  "balance"
+  "customer_account"
  ],
  "fields": [
   {
@@ -36,19 +35,11 @@
    "fieldname": "customer_account",
    "fieldtype": "Data",
    "label": "Customer Account"
-  },
-  {
-   "default": "0",
-   "fieldname": "balance",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Balance",
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-29 23:20:21.014602",
+ "modified": "2021-09-09 08:51:51.207560",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Customer",

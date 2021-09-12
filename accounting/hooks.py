@@ -1,5 +1,5 @@
 from . import __version__ as app_version
-
+import frappe
 app_name = "accounting"
 app_title = "Accounting"
 app_publisher = "summayya"
@@ -182,3 +182,4 @@ app_license = "MIT"
 # 	"accounting.auth.validate"
 # ]
 
+default_company = frappe.db.sql('select name from tabCompany limit 1')

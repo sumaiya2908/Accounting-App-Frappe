@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "company_name",
-  "column_break_2"
+  "abbrevation"
  ],
  "fields": [
   {
@@ -19,13 +19,15 @@
    "unique": 1
   },
   {
-   "fieldname": "column_break_2",
-   "fieldtype": "Column Break"
+   "fieldname": "abbrevation",
+   "fieldtype": "Data",
+   "label": "Abbrevation",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-26 16:23:17.791906",
+ "modified": "2021-09-08 22:34:12.039544",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Company",

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "autoname": "field:account_name",
- "creation": "2021-07-20 12:54:20.922014",
+ "creation": "2021-09-08 23:16:37.550310",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -10,42 +10,29 @@
   "account_no",
   "company",
   "root_type",
-  "balance_type",
-  "account_balance",
   "lft",
   "rgt",
   "is_group",
   "old_parent",
-  "parent_accounts",
-  "data_11"
+  "parent_account"
  ],
  "fields": [
   {
    "fieldname": "account_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Account Name",
    "unique": 1
   },
   {
    "fieldname": "account_no",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Account No"
   },
   {
    "fieldname": "root_type",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Root Type",
    "options": "\nAssest\nLiability\nExpense\nIncome"
-  },
-  {
-   "fieldname": "balance_type",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Balance_type",
-   "read_only": 1
   },
   {
    "fieldname": "lft",
@@ -73,42 +60,29 @@
    "fieldname": "old_parent",
    "fieldtype": "Link",
    "label": "Old Parent",
-   "options": "Accounts"
+   "options": "Account"
   },
   {
-   "fetch_from": "accounts.account_name",
-   "fieldname": "parent_accounts",
+   "fieldname": "parent_account",
    "fieldtype": "Link",
-   "label": "Parent Accounts",
-   "options": "Accounts"
+   "label": "Parent Account",
+   "options": "Account"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
    "options": "Company"
-  },
-  {
-   "fieldname": "data_11",
-   "fieldtype": "Data"
-  },
-  {
-   "default": "0",
-   "fieldname": "account_balance",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Account Balance",
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2021-07-28 21:23:47.091543",
+ "modified": "2021-09-12 13:14:15.930496",
  "modified_by": "Administrator",
  "module": "Accounting",
- "name": "Accounts",
- "nsm_parent_field": "parent_accounts",
+ "name": "Account",
+ "nsm_parent_field": "parent_account",
  "owner": "Administrator",
  "permissions": [
   {
