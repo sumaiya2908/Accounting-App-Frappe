@@ -3,46 +3,67 @@
 
 frappe.ui.form.on("Payment Entry", {
 	// returns the company's accounts in account field
-	setup: function (frm) {
-		frm.set_query("pay_to_account", function (frm) {
-			return {
-				filters: {
-					company: frm.company,
-				},
-			};
-		});
-		frm.set_query("pay_from_account", function (frm) {
-			return {
-				filters: {
-					company: frm.company,
-				},
-			};
-		});
+	payment_type: function (frm) {
+		if (frm.doc.payment_type == "Pay") {
+			frm.set_query("pay_to_account", function (frm) {
+				if (frm.party_type == "Supplier") {
+					return {
+						filters: {
+							company: frm.company,
+							name: `Creditors - ${frm.abbr}`,
+						},
+					};
+				}
+				if (frm.party_type == "Customer") {
+					return {
+						filters: {
+							company: frm.company,
+							name: `Debitors - ${frm.abbr}`,
+						},
+					};
+				}
+			});
+
+			frm.set_query("pay_from_account", function (frm) {
+				return {
+					filters: {
+						company: frm.company,
+						root_type: 'Assest',
+						'is_group':0
+					}
+				}
+			});
+
+		}
+			if (frm.doc.payment_type == "Receive") {
+				frm.set_query("pay_to_account", function (frm) {
+					return {
+						filters: {
+							company: frm.company,
+							root_type: 'Assest',
+							'is_group':0
+						}
+					}
+				});
+
+				frm.set_query("pay_from_account", function (frm) {
+					if (frm.party_type == "Supplier") {
+						return {
+							filters: {
+								company: frm.company,
+								name: `Creditors - ${frm.abbr}`,
+							},
+						};
+					}
+					if (frm.party_type == "Customer") {
+						return {
+							filters: {
+								company: frm.company,
+								name: `Debitors - ${frm.abbr}`,
+							},
+						};
+					}
+				});
+			}
 	},
-
-
-	refresh(frm) {
-		frm.trigger("payment_type");
-		// frm.trigger("party_type")
-	},
-	payment_type(frm){
-		let a = frappe.db.get_single_value('Company', 'abbrevation')
-		// let abbr = frm.doc.company.split(" ").map((n)=>n[0]).join(" ");
-		// if(frm.doc.payment_type == "Pay"){
-		// 	frm.set_query("pay_to_account"), () => {
-		// 		return{
-		// 			filters: {
-		// 				"account_name" : `Creditors-${frm.doc.company}`
-		// 			}
-		// 		}
-		// 	}
-		// }
-		console.log(a)
-	}
-
-
 });
-
-
-
-

@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "company",
+  "abbr",
   "supplier_name",
   "section_break_6",
   "posting_date",
@@ -17,8 +18,10 @@
   "item",
   "section_break_9",
   "total_quantity",
+  "debit_account",
   "column_break_11",
-  "total_amount"
+  "amount",
+  "credit_account"
  ],
  "fields": [
   {
@@ -26,14 +29,16 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Company",
-   "options": "Company"
+   "options": "Company",
+   "reqd": 1
   },
   {
    "fieldname": "supplier_name",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Supplier Name",
-   "options": "Supplier"
+   "options": "Supplier",
+   "reqd": 1
   },
   {
    "default": "Today",
@@ -79,17 +84,9 @@
   {
    "default": "0",
    "fieldname": "total_quantity",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "in_list_view": 1,
    "label": "Total Quantity",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "total_amount",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Total Amount",
    "read_only": 1
   },
   {
@@ -101,12 +98,42 @@
    "fieldname": "paid",
    "fieldtype": "Check",
    "label": "Paid"
+  },
+  {
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "label": "Debit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "credit_account",
+   "fieldtype": "Link",
+   "label": "Credit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "company.abbrevation",
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "abbr",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-07-23 12:44:19.693860",
+ "modified": "2021-09-12 11:43:08.360595",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Purchase Invoice",

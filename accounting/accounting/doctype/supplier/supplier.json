@@ -8,8 +8,7 @@
  "field_order": [
   "supplier_name",
   "supplier_address",
-  "supplier_contact",
-  "balance"
+  "supplier_contact"
  ],
  "fields": [
   {
@@ -17,15 +16,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Supplier Name",
+   "reqd": 1,
    "unique": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "balance",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Balance",
-   "read_only": 1
   },
   {
    "fieldname": "supplier_address",
@@ -40,7 +32,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-29 23:21:00.877234",
+ "modified": "2021-09-09 08:49:47.179672",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Supplier",

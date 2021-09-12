@@ -10,9 +10,9 @@
   "company",
   "fiscal_year",
   "account",
+  "balance",
   "debit",
   "credit",
-  "balance",
   "against_account",
   "voucher_type",
   "voucher_no"
@@ -40,29 +40,24 @@
   },
   {
    "fieldname": "account",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Account"
+   "label": "Account",
+   "options": "Accounts"
   },
   {
    "default": "0",
    "fieldname": "debit",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Debit"
   },
   {
    "default": "0",
    "fieldname": "credit",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Credit"
-  },
-  {
-   "fieldname": "balance",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Balance"
   },
   {
    "fieldname": "against_account",
@@ -81,11 +76,18 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Voucher No"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Balance",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-30 13:56:59.809725",
+ "modified": "2021-09-12 13:30:12.538781",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "GL Entry",

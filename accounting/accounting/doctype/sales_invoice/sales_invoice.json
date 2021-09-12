@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "company",
+  "abbr",
   "customer_name",
   "column_break_3",
   "posting_date",
@@ -16,8 +17,10 @@
   "item",
   "section_break_8",
   "total_quantity",
+  "debit_account",
   "column_break_10",
-  "total_amount",
+  "amount",
+  "credit_account",
   "amended_from"
  ],
  "fields": [
@@ -26,7 +29,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Company",
-   "options": "Company"
+   "options": "Company",
+   "reqd": 1
   },
   {
    "fieldname": "customer_name",
@@ -88,14 +92,6 @@
    "read_only": 1
   },
   {
-   "default": "0",
-   "fieldname": "total_amount",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Total Amount",
-   "read_only": 1
-  },
-  {
    "fieldname": "column_break_10",
    "fieldtype": "Column Break"
   },
@@ -104,12 +100,42 @@
    "fieldname": "paid",
    "fieldtype": "Check",
    "label": "Paid"
+  },
+  {
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "label": "Debit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "credit_account",
+   "fieldtype": "Link",
+   "label": "Credit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "company.abbrevation",
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "abbr",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-07-23 12:39:55.333878",
+ "modified": "2021-09-12 11:43:52.322319",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Sales Invoice",

@@ -14,7 +14,7 @@ default_accounts = {
 
 
     "Source of Funds":
-        ["Creditors"],
+        ["Creditors", "Stock Liablities"],
 
 
     "Expense":
@@ -23,7 +23,7 @@ default_accounts = {
 
 
     "Income":
-        ["Income Account"]
+        ["Sales"]
 }
 
 root_type = {"Application of Funds": "Assest", "Source of Funds" : "Liability", "Expense" : "Expense", "Income" : "Income" }
@@ -34,37 +34,38 @@ class Company(Document):
     def create_accounts(self):
         for account in default_accounts:
             root_account = frappe.get_doc({
-                "doctype": "Accounts",
+                "doctype": "Account",
                 "account_name": account + " - " + self.abbrevation,
                 "is_group": 1,
                 "root_type": root_type[account],
-                "company": self.company_name
+                "company": self.company_name,
+
             })
             root_account.insert()
             for child in default_accounts[account]:
                 chile_account = frappe.get_doc({
-                    "doctype": "Accounts",
+                    "doctype": "Account",
                     "account_name": child + " - " + self.abbrevation,
-                    "parent_accounts": root_account.account_name,
+                    "parent_account": root_account.account_name,
                     "company": self.company_name,
                     "is_group": 0,
-                    "root_type": root_type[account]
+                    "root_type": root_type[account],
+                    "company": self.company_name,
                 })
                 chile_account.insert()
 
     def before_save(self):
-        abbrevation = "".join(
-            e[0] for e in self.company_name.split()).capitalize()
         abbr_exist = frappe.db.exists({
             "doctype" : "Company",
-            "abbrevation" : abbrevation
+            "abbrevation" : self.abbrevation
         })
-
         if(abbr_exist):
             frappe.throw("Abbrevation already used ! ")
 
-        else:
-            self.abbrevation = abbrevation
-
     def after_insert(self):
         self.create_accounts()
+
+
+@frappe.whitelist()
+def default_company():
+	return frappe.db.sql('select name from tabCompany limit 1')
