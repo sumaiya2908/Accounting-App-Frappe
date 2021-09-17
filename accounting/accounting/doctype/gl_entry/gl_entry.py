@@ -6,10 +6,10 @@ from frappe.model.document import Document
 
 
 class GLEntry(Document):
+
 	def before_submit(self):
 		self.balance = get_account_balance(self.account, self.company)
-
-
+		self.balance = self.balance + int(self.debit) - int(self.credit)
 
 def create_gl_entry(object, voucher_type, pay_from_account, pay_to_account):
 	frappe.get_doc({
@@ -22,6 +22,7 @@ def create_gl_entry(object, voucher_type, pay_from_account, pay_to_account):
         	"voucher_type": voucher_type,
         	"voucher_no": object.name,
     		}).submit()
+
 
 	frappe.get_doc({
         	"doctype": "GL Entry",

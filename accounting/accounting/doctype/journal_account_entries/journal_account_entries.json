@@ -17,19 +17,19 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Account",
-   "options": "Accounts"
+   "options": "Account"
   },
   {
    "default": "0",
    "fieldname": "debit",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Debit"
   },
   {
    "default": "0",
    "fieldname": "credit",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Credit"
   },
@@ -51,7 +51,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-07-27 10:59:11.942268",
+ "modified": "2021-09-17 19:32:15.149148",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Journal Account Entries",

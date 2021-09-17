@@ -14,7 +14,7 @@
  "is_standard": 1,
  "label": "Accounting",
  "links": [],
- "modified": "2021-09-13 14:20:13.922180",
+ "modified": "2021-09-17 18:20:32.235841",
  "modified_by": "Administrator",
  "module": "Accounting",
  "name": "Accounting",
@@ -51,6 +51,12 @@
    "label": "General Ledger",
    "link_to": "General Legder",
    "type": "Report"
+  },
+  {
+   "doc_view": "",
+   "label": "Journal Entry",
+   "link_to": "Journal Entry",
+   "type": "DocType"
   }
  ]
 }
